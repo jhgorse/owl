@@ -128,6 +128,7 @@ let openblas_default : C.Pkg_config.package_conf =
   let p0 = "/usr/local/opt/openblas/lib" in
   let p1 = "/opt/OpenBLAS/lib/" in
   let p2 = "/usr/local/lib/openblas/lib" in
+  let p3 = "/Users/jhg/Work/lapack" in
   let libs =
     if Sys.file_exists p0
     then [ "-L" ^ p0 ]
@@ -135,6 +136,8 @@ let openblas_default : C.Pkg_config.package_conf =
     then [ "-L" ^ p1 ]
     else if Sys.file_exists p2
     then [ "-L" ^ p2 ]
+    else if Sys.file_exists p3
+    then [ p3 ^ "libcblas.a " ^ p3 ^ "liblapack.a " ^ p3 ^ "liblapacke.a " ^ p3 ^ "librefblas.a " ^ p3 ^ "libtmglib.a " ]
     else []
   in
   let p0 = "/usr/include/openblas" in
