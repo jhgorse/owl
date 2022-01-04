@@ -35,7 +35,7 @@ let get_default_cflags =
     [ "-g"
     ; "-O3"
     ; "-Ofast"
-    ; "-march=native"
+    ; "-mcpu=apple-m1"
     ; "-funroll-loops"
     ; "-ffast-math"
     ; "-DSFMT_MEXP=19937"
