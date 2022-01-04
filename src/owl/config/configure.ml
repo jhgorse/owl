@@ -241,7 +241,7 @@ some details on how your openblas has been installed and the output of
               ~link_flags:(openblas_conf.libs @ [ "-lm" ])
             |> not
         in
-        if needs_lapacke_flag then [ "-llapacke" ] else []
+        if needs_lapacke_flag then [ "/Users/jhg/Work/lapack/libcblas.a /Users/jhg/Work/lapack/liblapack.a /Users/jhg/Work/lapack/liblapacke.a /Users/jhg/Work/lapack/librefblas.a /Users/jhg/Work/lapack/libtmglib.a" ] else []
       in
       let openmp_config = get_openmp_config c in
       (* configure link options *)
